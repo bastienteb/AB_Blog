@@ -1,0 +1,20 @@
+<h2>
+    <%= @article.title %>
+</h2>
+
+<p><%= @article.chapeau %></p>
+<p><%= @article.text %></p>
+<p><%= @article.creation_date %></p>
+<img src=<%= @article.image %>>
+
+
+
+<button>
+    <%= link_to 'Remove', [@user, @article], method: :delete, data: { confirm: 'Are you sure?' } %>
+</button>
+
+<button>
+    <%= link_to @article.user do %>
+        Retour
+    <% end %>
+</button>

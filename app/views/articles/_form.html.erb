@@ -1,0 +1,39 @@
+<%= form_for @article, url: [@user, @article] do |f| %>
+    Title
+    <%= f.text_field :title %>
+        <% if @article.errors[:title].present? %>
+            <div class="error">
+                <%= @article.errors[:title].to_sentence %>
+            </div>
+        <% end %>
+    Chapeau
+    <%= f.text_field :chapeau %>
+        <% if @article.errors[:chapeau].present? %>
+            <div class="error">
+                <%= @article.errors[:chapeau].to_sentence %>
+            </div>
+        <% end %>
+    text
+    <%= f.text_field :text %>
+        <% if @article.errors[:text].present? %>
+            <div class="error">
+                <%= @article.errors[:text].to_sentence %>
+            </div>
+        <% end %>
+    date
+    <%= f.date_field :creation_date %>
+        <% if @article.errors[:creation_date].present? %>
+            <div class="error">
+                <%= @article.errors[:creation_date].to_sentence %>
+            </div>
+        <% end %>
+    image
+    <%= f.text_field :image %>
+        <% if @article.errors[:image].present? %>
+            <div class="error">
+                <%= @article.errors[:image].to_sentence %>
+            </div>
+        <% end %>    
+    
+    <%= f.submit %>
+<% end %>

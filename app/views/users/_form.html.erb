@@ -1,0 +1,24 @@
+<%= form_for @user do |f| %>
+    First name
+    <%= f.text_field :first_name %>
+        <% if @user.errors[:first_name].present? %>
+            <div class="error">
+                <%= @user.errors[:first_name].to_sentence %>
+            </div>
+        <% end %>
+    Last name
+    <%= f.text_field :last_name %>
+        <% if @user.errors[:last_name].present? %>
+            <div class="error">
+                <%= @user.errors[:last_name].to_sentence %>
+            </div>
+        <% end %>
+    Birthdate
+    <%= f.date_field :birth_date %>
+        <% if @user.errors[:birth_date].present? %>
+            <div class="error">
+                <%= @user.errors[:birth_date].to_sentence %>
+            </div>
+        <% end %>
+    <%= f.submit %>
+<% end %>

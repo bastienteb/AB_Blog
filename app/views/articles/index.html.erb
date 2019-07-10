@@ -1,0 +1,18 @@
+<h1>Article de
+    <%= @user.full_name %>
+</h1>
+
+<button>
+    <%= link_to 'New Article', [:new, @user, :article]%>
+</button>
+
+<ul>
+    <% @articles.each do |article| %>
+    <li>
+        <%= link_to article.title %>
+    <% end %>
+</ul>
+
+<button>
+    <%= link_to 'Retour', @user %>
+</button>

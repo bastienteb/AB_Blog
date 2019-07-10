@@ -1,0 +1,23 @@
+<h1>Users list</h1>
+
+<p>World !</p>
+
+<button>
+    <%= link_to 'New User', [:new, :user]%>
+</button>
+
+<ul>
+    <% @users.each do |user| %>
+        <li>
+        <%= link_to user do %>
+            <%= user.first_name %> 
+            <strong><%= user.last_name %></strong> 
+        <% end %>
+        <br />
+        <% if user.birth_date %>
+            <%= user.birth_date.strftime('%d/%m/%y') %> <br />
+            <%= Time.now.year - user.birth_date.year %> years old
+        <% end %>
+        </li>
+    <% end %>
+<ul>

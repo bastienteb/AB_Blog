@@ -1,0 +1,26 @@
+<h2>
+    Utilisateur : 
+    <%= @user.first_name %>
+    <%= @user.last_name %>
+</h2>
+    
+<p> Né.e le <%= @user.birth_date.strftime('%d/%m/%y') %></p>
+
+<button>
+    <%= link_to 'Edit', [:edit, @user] %>
+</button>
+
+<button>
+    <%= link_to 'Remove', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+</button>
+
+<button>
+    <%= link_to 'Articles', [@user,:articles]%>
+</button>
+
+
+<button>
+    <%= link_to :users do %>
+        Retour
+    <% end %>
+</button>
